@@ -5,7 +5,13 @@ const PORT = 5000;
 const cors = require("cors")
 
 app.use(cors())
-// LoadData in Database
+app.use(cors(
+{
+origin:["https://deploy-mern-1whq.vercel.app"],
+methods:["POST","GET"]
+credentials:true
+}
+));
 app.use(express.json())
 
 // Database Connection
@@ -95,4 +101,5 @@ app.delete("/delete/:id", async (req, res)=> {
 
 app.listen(PORT, () => {
     console.log(`server is running on ${PORT}`)
+
 })
