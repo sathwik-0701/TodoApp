@@ -5,13 +5,7 @@ const PORT = 5000;
 const cors = require("cors")
 
 app.use(cors())
-app.use(cors(
-{
-origin:["https://deploy-mern-1whq.vercel.app"],
-methods:["POST","GET"]
-credentials:true
-}
-));
+
 app.use(express.json())
 
 // Database Connection
@@ -103,3 +97,4 @@ app.listen(PORT, () => {
     console.log(`server is running on ${PORT}`)
 
 })
+
